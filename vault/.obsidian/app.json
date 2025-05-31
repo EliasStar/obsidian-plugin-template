@@ -1,0 +1,11 @@
+{
+  "useTab": false,
+  "autoConvertHtml": false,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "relative",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./_attachments",
+  "uriCallbacks": true,
+  "showInlineTitle": false
+}

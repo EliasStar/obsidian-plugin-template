@@ -1,11 +1,14 @@
-# Obsidian Sample Plugin
+# Obsidian Plugin Template
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+This is a plugin template for Obsidian (https://obsidian.md).
 
-This project uses TypeScript to provide type checking and documentation.
+It uses TypeScript to provide type checking and documentation.
 The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
+This repo also comes with a development vault with hot-reload support.
+It loads the plugin from the build folder so you do not need to clone the repo in your vault to develop.
+
+The sample code demonstrates some of the basic functionality the plugin API can do.
 - Adds a ribbon icon, which shows a Notice when clicked.
 - Adds a command "Open Sample Modal" which opens a Modal.
 - Adds a plugin setting tab to the settings page.
@@ -13,50 +16,36 @@ This sample plugin demonstrates some of the basic functionality the plugin API c
 - Registers a global interval which logs 'setInterval' to the console.
 
 ## First time developing plugins?
-
 Quick starting guide for new plugin devs:
-
 - Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
 - Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
+- Clone your repo to a local development folder.
+- Install NodeJS, then run `npm install` in the command line under your repo folder.
+- Run `npm run watch` to compile your plugin every time you save a file.
+- Make changes to `src/main.ts` (or create new `.ts` files).
+- Open `vault` in Obsidian to see your plugin.
 - For updates to the Obsidian API run `npm update` in the command line under your repo folder.
 
-## Releasing new releases
+## Building
+- Clone this repo.
+- Make sure your NodeJS is at least v16 (`node --version`).
+- `npm install` to install dependencies.
+- `npm run watch` to start compilation in watch mode.
+- `npm run build` to build the plugin for production.
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
-
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+## Releasing
+Run `npm version {major|minor|patch}` to bump the version.
+This will make the neccessary changes to `manifest.json` and `versions.json`.
+This will also create a git commit and tag.
 
 ## Adding your plugin to the community plugin list
-
 - Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
 - Publish an initial version.
 - Make sure you have a `README.md` file in the root of your repo.
 - Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
 
-## How to use
-
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
-
-## Manually installing the plugin
-
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
 ## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
+- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code.
 - To use eslint with this project, make sure to install eslint from terminal:
   - `npm install -g eslint`
 - To use eslint to analyze this project use this command:
@@ -66,11 +55,9 @@ Quick starting guide for new plugin devs:
   - `eslint .\src\`
 
 ## Funding URL
-
 You can include funding URLs where people who use your plugin can financially support it.
 
 The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
 ```json
 {
     "fundingUrl": "https://buymeacoffee.com"
@@ -78,7 +65,6 @@ The simple way is to set the `fundingUrl` field to your link in your `manifest.j
 ```
 
 If you have multiple URLs, you can also do:
-
 ```json
 {
     "fundingUrl": {
@@ -90,5 +76,4 @@ If you have multiple URLs, you can also do:
 ```
 
 ## API Documentation
-
 See https://github.com/obsidianmd/obsidian-api
