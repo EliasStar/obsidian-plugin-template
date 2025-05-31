@@ -1,7 +1,7 @@
 import fs from "fs"
 import esbuild from "esbuild"
 import process from "process"
-import builtins from "builtin-modules"
+import { builtinModules } from 'node:module'
 
 const watch = (process.argv[2] === "watch")
 
@@ -32,7 +32,7 @@ const context = await esbuild.context({
         "@lezer/common",
         "@lezer/highlight",
         "@lezer/lr",
-        ...builtins,
+        ...builtinModules,
     ],
 })
 

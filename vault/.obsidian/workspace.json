@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5a46e578b3c867cb",
+        "id": "9eeafd0e258a1489",
         "type": "tabs",
         "children": [
           {
-            "id": "1a299b10b2c114c1",
+            "id": "34ed49bf882d6f7c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -170,13 +170,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "sample-plugin:Sample Plugin": false,
+      "obsidian-plugin-template:Sample Plugin": false,
       "switcher:Open quick switcher": false,
       "command-palette:Open command palette": false,
       "graph:Open graph view": false
     }
   },
-  "active": "1a299b10b2c114c1",
+  "active": "34ed49bf882d6f7c",
   "lastOpenFiles": [
     "Scratchpad.md",
     "Untitled.md",
