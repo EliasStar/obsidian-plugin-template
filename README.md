@@ -19,7 +19,7 @@ The sample code demonstrates some of the basic functionality the plugin API can 
 Quick starting guide for new plugin devs:
 - Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
 - Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder.
+- Clone your repo to a local development folder using `git clone --recurse-submodules`.
 - Install NodeJS, then run `npm install` in the command line under your repo folder.
 - Run `npm run watch` to compile your plugin every time you save a file.
 - Make changes to `src/main.ts` (or create new `.ts` files).
@@ -27,7 +27,7 @@ Quick starting guide for new plugin devs:
 - For updates to the Obsidian API run `npm update` in the command line under your repo folder.
 
 ## Building
-- Clone this repo.
+- Clone this repo using `git clone --recurse-submodules`. 
 - Make sure your NodeJS is at least v22 (`node --version`).
 - `npm install` to install dependencies.
 - `npm run watch` to start compilation in watch mode.
